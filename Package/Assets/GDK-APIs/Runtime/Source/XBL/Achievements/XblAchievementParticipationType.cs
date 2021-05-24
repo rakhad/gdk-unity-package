@@ -1,17 +1,10 @@
-﻿using System;
-
-namespace XGamingRuntime
+namespace XGamingRuntime.Interop
 {
-    public enum XblAchievementParticipationType : UInt32
+    [NativeTypeName("uint32_t")]
+    public enum XblAchievementParticipationType : uint
     {
-        /// <summary>The participation type is unknown.</summary>
         Unknown,
-
-        /// <summary>An achievement that can be earned as an individual participant.</summary>
         Individual,
-
-        /// <summary>An achievement that can be earned as a group participant.</summary>
-        Group
+        Group,
     }
 }
-

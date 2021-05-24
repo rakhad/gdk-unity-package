@@ -19,7 +19,7 @@ namespace XGamingRuntime.Interop
 
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    internal struct XAsyncBlock
+    public struct XAsyncBlock
     {
         internal XTaskQueueHandle queue;
         internal IntPtr context;

@@ -1,19 +1,11 @@
-﻿using System;
-
-namespace XGamingRuntime
+namespace XGamingRuntime.Interop
 {
-    public enum XblAchievementProgressState : UInt32
+    [NativeTypeName("uint32_t")]
+    public enum XblAchievementProgressState : uint
     {
-        /// <summary>Achievement progress is unknown.</summary>
         Unknown,
-
-        /// <summary>Achievement has been earned.</summary>
         Achieved,
-
-        /// <summary>Achievement progress has not been started.</summary>
         NotStarted,
-
-        /// <summary>Achievement progress has started.</summary>
-        InProgress
+        InProgress,
     }
 }
