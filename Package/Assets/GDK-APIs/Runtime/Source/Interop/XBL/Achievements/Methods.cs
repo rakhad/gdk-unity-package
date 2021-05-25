@@ -4,22 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace XGamingRuntime.Interop
 {
-    [Conditional("DEBUG")]
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue | AttributeTargets.Enum, AllowMultiple = false, Inherited = true)]
-    internal sealed class NativeTypeNameAttribute : Attribute
+    internal static unsafe partial class XblInterop
     {
-        public NativeTypeNameAttribute(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; private set; }
-    }
-
-    public static unsafe partial class Methods
-    {
-        private const string ThunkDllName = "Microsoft_Xbox_Services_141_GDK_C_Thunks";
-
         [DllImport(ThunkDllName, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("HRESULT")]
         public static extern int XblAchievementsResultGetAchievements([NativeTypeName("XblAchievementsResultHandle")] XblAchievementsResult* resultHandle, [NativeTypeName("const XblAchievement **")] XblAchievement** achievements, [NativeTypeName("size_t *")] uint* achievementsCount);

@@ -1,6 +1,6 @@
-namespace XGamingRuntime.Interop
+namespace XGamingRuntime
 {
-    [NativeTypeName("uint32_t")]
+    [Interop.NativeTypeName("uint32_t")]
     public enum XblAchievementRarityCategory : uint
     {
         Unset = 0,
